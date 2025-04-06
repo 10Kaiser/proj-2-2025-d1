@@ -1,0 +1,28 @@
+.footer{
+    display: flex;justify-content: space-between;
+    background-color: rgb(255, 255, 255); border: 6px solid rgba(10, 1, 90, 0.432);
+    padding: 23px;list-style: none;margin-top: 15px;
+}
+footer a{
+    text-decoration: none;
+    color: black;
+}
+.back{
+    background-color: rgb(180, 208, 231);
+}
+.about{
+    display: flex;
+}
+
+.aboutext{
+    color: rgb(177, 16, 4);
+
+}
+.icons{
+    display: flex;justify-content: space-between;
+    color: black; font-size: 25px;
+}
+
+.fa-youtube:hover{color: red;}
+.fa-twitter:hover{color: rgb(0, 140, 255);}
+.fa-instagram:hover{color: rgb(235, 11, 223);}
