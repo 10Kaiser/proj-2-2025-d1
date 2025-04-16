@@ -1,0 +1,23 @@
+.box{
+    padding-bottom: 180px;
+    padding-top: 100px;
+    padding-left: 60px;
+    display: flex;
+}
+
+
+
+.purchasebtn{
+    color: rgb(255, 255, 255);
+    margin: 25px 40px;
+}
+.PDFbtn{
+    color: rgb(255, 255, 255);
+    margin: 0px 23px;
+}
+
+.desc{
+    font-size: large;
+    font-weight: bold;
+    margin: 5px 20px 0px 100px;
+}

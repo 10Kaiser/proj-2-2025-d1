@@ -1,0 +1,29 @@
+CREATE DATABASE Books;
+USE Books;
+
+CREATE table BookInfo (
+    ID INT PRIMARY KEY,
+    Title VARCHAR(50),
+    Stock INT
+);
+
+INSERT into bookinfo(ID,Title,Stock) VALUES
+(1,'JoJos Bizarre Adventure SBR',7);
+INSERT into bookinfo(ID,Title,Stock) VALUES
+(2,'Meditations',20);
+INSERT into bookinfo(ID,Title,Stock) VALUES
+(3,'The Last Town',0);
+INSERT into bookinfo(ID,Title,Stock) VALUES
+(4,'Batman: Year One',19);
+INSERT into bookinfo(ID,Title,Stock) VALUES
+(5,'JoJos Bizarre Adventure Stardust crusaders',17);
+INSERT into bookinfo(ID,Title,Stock) VALUES
+(6,'Desperation',60);
+
+CREATE table persons (
+    PersonID INT PRIMARY KEY,
+    FullName VARCHAR(255),
+    Email Varchar(255),
+    PASSWORD varchar (50)
+);
+SELECT * FROM BookInfo;

@@ -1,0 +1,11 @@
+.cardgroup{
+    display: flex;
+    gap: 20px;
+    width: 80%;
+}
+
+h1{
+    font-family: "Kanit", sans-serif;
+    font-weight: 100px;
+    text-align: center;
+}
