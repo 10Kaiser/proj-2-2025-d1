@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css ">
+    <link rel="stylesheet" href="assets/css/comp.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+ <!-- AOS LIBRARY -->
+ <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <title>Home</title>
+ 
+    <nav class="navbar navbar-expand-lg navbar-light bg-secondary">
+      <div class="container-fluid">
+        <img src="assets/img/opyt.png" width="3.5%" alt="">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+            <li class="nav-item">
+              <!-- From Uiverse.io by WhiteNervosa --> 
+<button class="btn2">
+<a class="nav-link active" aria-current="page" href="Main.html">Home</a>
+</button>
+              
+            </li>
+
+            <li class="nav-item">
+              <button class="btn2">
+                <a class="nav-link" href="Comp.html">Competition</a>
+              </button>
+                       
+             
+            </li>
+
+          </ul>
+          <form class="d-flex" >
+            <!-- Fancy Buttons Edited --> 
+            <div class="button-borders" style="padding-right: 20px;" >
+              <button class="primary-button" ><a href="store.html"> Store</a>
+              </button>
+            </div>
+<div class="button-borders" style="padding-right: 20px;" >
+<button class="primary-button" ><a href="register.php"> Register</a>
+</button>
+</div>
+<div class="button-borders" style="padding-left: 20px; " >
+
+<button class="primary-button loginbutton "><a href="login.html"> LogIn</a>
+</button> 
+</div>
+            <input style="padding-left: 20px;" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn  bg-primary" type="submit"><a href="#">Search</a></button>
+          </form>
+        </div>
+      </div>
+    </nav>
+  </head>
+<!-- MAIN BODY -->
+<body>
+    <div class="back">
+        <div class="featured">
+          <div class="book-info">
+            <h1>Essay Writing Competition</h1>
+            <h2>Topic: My Favourite Book</h2>
+            <p class="book-synopsis">
+              Write an essay on what your favourite book is! The winner will be chosen next week and will recieve a 20% discount on their next purchase!
+            </p>
+            <p class="book-price"><strong>Time Limit:</strong> 3 hours</p>
+            <div id="timer" class="timer"></div>
+            <textarea id="essay" class="essay-box" placeholder="Start writing your essay here..."></textarea><br>
+            <h3>Enter your Name and Email!</h3>
+            <input type="text" class="input" placeholder="Your Name">
+            <br>
+            <input type="email" class="input" placeholder="x@y.com">
+            <br>
+            <button class="bg-primary" onclick="submitEssay()">Submit Essay</button>
+            <p id="status" class="status-message"></p>
+          </div>
+        </div>
+      </div>
+      
+      <script>
+        const timeLimit = 3 * 60 * 60;
+        let remainingTime = timeLimit;
+      
+        function formatTime(seconds) {
+          const hrs = Math.floor(seconds / 3600);
+          const mins = Math.floor((seconds % 3600) / 60);
+          const secs = seconds % 60;
+          return `${hrs}h ${mins}m ${secs}s`;
+        }
+      
+        function updateTimer() {
+          const timerEl = document.getElementById('timer');
+          if (remainingTime <= 0) {
+            clearInterval(timerInterval);
+            document.getElementById('essay').disabled = true;
+            document.getElementById('status').innerText = 'Time is up! You can no longer submit your essay.';
+            return;
+          }
+          timerEl.textContent = "Time Remaining: " + formatTime(remainingTime);
+          remainingTime--;
+        }
+      
+        const timerInterval = setInterval(updateTimer, 1000);
+        updateTimer();
+      
+        function submitEssay() {
+          if (remainingTime <= 0) {
+            document.getElementById('status').innerText = 'Submission failed: Time is up!';
+            return;
+          }
+          const essayContent = document.getElementById('essay').value.trim();
+          if (!essayContent) {
+            document.getElementById('status').innerText = 'Please write your essay before submitting.';
+            return;
+          }
+          document.getElementById('status').innerText = 'Essay submitted successfully!';
+          // Optionally send data to backend here.
+        }
+      </script>
+      
+
+
+
+    <footer class="footer bg-secondary" >
+
+        <div>
+          <a href=".html"><li>Support</li></a>
+          <a href=".html"><li>About us</li></a>
+        </div>
+        
+        
+        
+        <div>
+        <p>Follow us</p>
+            <div class="icons">
+                <a href=""><i class="fa-brands fa-youtube" > </i></a>
+                <a href=""><i class="fa-brands fa-twitter"></i></a>
+                <a href=""><i class="fa-brands fa-instagram"> </i></a>
+            </div>
+        </div>
+            
+        
+    </footer>
+
+
+    <!-- AOS LIBRARY -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+</body>
+</html>
